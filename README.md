@@ -29,6 +29,14 @@ Application is developed and aims to Debian-based OS, but it can also be run on 
 
 ---
 
+### **Install dependecies**
+
+Install required GLADE, GTK, GCC packages:
+
+``` console
+sudo apt install -y glade gcc
+```
+
 ### **Get the repository**
 
 Download the Github repository:
@@ -49,27 +57,6 @@ Build program:
 
 ``` console
 make
-```
-
-**Attention!** If you receive output like below, you shold install gtk package.
-
-``` text
- Compilation is starting...
-
- [*] Compiling app.c into in ...
-/bin/sh: 1: pkg-config: not found
-In file included from app.c:1:
-include/app.h:6:10: fatal error: gtk/gtk.h: No such file or directory
-    6 | #include <gtk/gtk.h>
-      |          ^~~~~~~~~~~
-compilation terminated.
-make: *** [Makefile:42: obj/app.o] Error 1
-```
-
-You can perform it with following command:
-
-``` console
-sudo apt install glade -y
 ```
 
 Then rerun make command to complete building process.
