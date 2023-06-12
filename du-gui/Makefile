@@ -25,6 +25,7 @@ all: $(TARGET)
 
 $(TARGET): $(DIR_OBJ)app.o $(DIR_OBJ)controls.o $(DIR_OBJ)execute.o
 	@echo " [*] Compiling $@ ..."
+	@mkdir bin 2> /dev/null
 	@$(CC) $^ -o $@ -I$(DIR_INC) $(CFLAGS) 
 	@echo "    Done."
 	@echo
@@ -36,7 +37,8 @@ $(TARGET): $(DIR_OBJ)app.o $(DIR_OBJ)controls.o $(DIR_OBJ)execute.o
 $(DIR_OBJ)app.o: app.c
 	@echo " Compilation is starting..."
 	@echo
-	@echo " [*] Compiling $< into $@ ..."
+	@mkdir obj 2> /dev/null
+	@echo " [*] Compiling $< into $bin ..."
 	@$(CC) -c $< -o $@ -I$(DIR_INC) $(CFLAGS)
 	@echo "    Done."
 
@@ -56,5 +58,6 @@ $(DIR_OBJ)execute.o: $(DIR_SRC)execute.c
 # Clean rule
 clean:
 	@echo " [*] Cleaning..."
-	@rm -f $(TARGET) obj/*.o
+	@rm -f $(TARGET) obj/*.o 2> /dev/null
+	@rmdir bin/ obj/ 2> /dev/null
 	@echo "  Done."

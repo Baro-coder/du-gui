@@ -106,7 +106,7 @@
                         <property name="action">select-folder</property>
                         <property name="create-folders">False</property>
                         <property name="show-hidden">True</property>
-                        <property name="title" translatable="yes"/>
+                        <property name="title" translatable="yes">Choose directory to examine</property>
                       </object>
                       <packing>
                         <property name="expand">False</property>
@@ -153,13 +153,17 @@
                         <property name="margin-top">10</property>
                         <property name="margin-bottom">10</property>
                         <property name="model">liststore_patterns</property>
-                        <property name="active">0</property>
+                        <property name="active">1</property>
                         <property name="has-entry">True</property>
                         <property name="entry-text-column">0</property>
                         <property name="id-column">0</property>
                         <child internal-child="entry">
                           <object class="GtkEntry" id="combobox_pattern_entry">
                             <property name="can-focus">False</property>
+                            <property name="max-width-chars">30</property>
+                            <property name="text" translatable="yes">None</property>
+                            <property name="progress-pulse-step">0</property>
+                            <property name="placeholder-text" translatable="yes">Pattern</property>
                           </object>
                         </child>
                       </object>
