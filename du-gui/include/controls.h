@@ -2,6 +2,7 @@
 #define H_CONTROLS
 
 /* LIBRARIES */
+#include <gtk/gtk.h>
 
 /* DEFINITIONS */
 
@@ -55,9 +56,14 @@
 // -- Radiobox : Default
 #define REDIOBOX_GIB_NAME "radio_G"
 
+/* DECLARATIONS */
+extern GtkButton *btn_clear;
+extern GtkButton *btn_execute;
+extern GtkTextView *outview;
 
 /* FUNCTIONS */
-
-
+void controls_init(GtkBuilder* builder);
+void btn_clear_on_click(GtkButton *button, gpointer user_data);
+void btn_execute_on_click(GtkButton *button, gpointer user_data);
 
 #endif
