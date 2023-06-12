@@ -19,7 +19,7 @@ This project is a graphical overlay for *du* program as a student project to mas
 Download the Github repository
 
 ``` console
-git clone *****
+git clone https://github.com/Baro-coder/du-gui.git
 ```
 
 ### **Build**
