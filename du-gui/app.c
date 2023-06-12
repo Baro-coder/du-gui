@@ -3,38 +3,43 @@
 #include "execute.h"
 
 
-GtkWidget *create_window(void) {
-    GtkWidget *window;
-    GtkBuilder *builder;
-    GError *error = NULL;
+GtkWidget *create_window(void)
+{
+	GtkWidget *window;
+	GtkBuilder *builder;
+	GError *error = NULL;
 
-    builder = gtk_builder_new();
+	builder = gtk_builder_new();
 
-    if (!gtk_builder_add_from_file(builder, UI_FILE, &error)) {
-        g_warning("Unable to load builder file: %s", error->message);
-        g_error_free(error);
-    }
+	if (!gtk_builder_add_from_file(builder, UI_FILE, &error))
+	{
+		g_warning("Unable to load builder file: %s", error->message);
+		g_error_free(error);
+	}
 
-    gtk_builder_connect_signals(builder, NULL);
+	gtk_builder_connect_signals(builder, NULL);
 
-    window = GTK_WIDGET(gtk_builder_get_object(builder, MAIN_WINDOW_NAME));
+	window = GTK_WIDGET(gtk_builder_get_object(builder, MAIN_WINDOW_NAME));
 
-    g_object_unref(builder);
+	g_object_unref(builder);
 
-    return window;
+	return window;
 }
 
-int main(int argc, char *argv[]) {
-    // Initializing GTK components
-    gtk_init(&argc, &argv);
 
-    // Creating app main window
-    GtkWidget *window;
-    window = create_window();
-    gtk_widget_show(window);
+/* Main Drive */
+int main(int argc, char *argv[])
+{
+	// Initializing GTK components
+	gtk_init(&argc, &argv);
 
-    // GTK main loop
-    gtk_main();
+	// Creating app main window
+	GtkWidget *window;
+	window = create_window();
+	gtk_widget_show(window);
 
-    return 0;
+	// GTK main loop
+	gtk_main();
+
+	return 0;
 }

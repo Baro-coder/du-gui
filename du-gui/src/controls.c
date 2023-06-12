@@ -2,5 +2,5 @@
 
 
 int check_control() {
-    return 0;
+	return 0;
 }
