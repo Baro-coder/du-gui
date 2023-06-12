@@ -6,6 +6,10 @@
 
 ## **Description**
 
+<p align="center">
+  <img src="https://raw.githubusercontent.com/Baro-coder/du-gui/master/app/ui/img/logo.png"></img>
+</p>
+
 Console built-in program *du* is a UNIX utility to summarize disk usage of the set of files, recursively for directories.
 
 This project is a graphical overlay for *du* program as a student project to master desktop application development with GLADE UI Designer and GTK framework.
@@ -107,5 +111,3 @@ Block size arguments:
 Output text area able to be scrolled up and down for maintain commands history and to handle much bigger outputs.
 
 ---
-
-## xxx
