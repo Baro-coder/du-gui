@@ -128,8 +128,4 @@ Output text area able to be scrolled vertically and horizontally for maintain co
 
 ---
 
-## **Potential future develop**
-
-1. More command arguments like `-s` (*summarize*), `-d` (*max recursive depth*) ...
-2. Entry to provide custom exclude patterns.
-3. Functionality of storing output into the files.
+## xxx
