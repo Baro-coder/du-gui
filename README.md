@@ -14,9 +14,20 @@ This project is a graphical overlay for *du* program as a student project to mas
 
 ## **Installation**
 
+### **Requirements**
+
+Application is developed and aims to Debian-based OS, but it can also be run on other UNIX-type operating system.
+
+| Software | Version |
+|---|---|
+|GCC|11.3.0|
+|GTK|3.0|
+
+---
+
 ### **Get the repository**
 
-Download the Github repository
+Download the Github repository:
 
 ``` console
 git clone https://github.com/Baro-coder/du-gui.git
@@ -27,7 +38,7 @@ git clone https://github.com/Baro-coder/du-gui.git
 Change directory:
 
 ``` console
-cd ./du-gui/du-gui/
+cd ./du-gui/app/
 ```
 
 Build program:
@@ -50,6 +61,8 @@ Run app with the following command:
 
 ### **Menu bar**
 
+**Items:**
+
 1. **Guide** - application user manual
 2. **About** - application info and credits
 
@@ -57,7 +70,7 @@ Run app with the following command:
 
 ### **Choose dir button**
 
-Dialog window used to determine which directory will be examined.
+Button calls dialog window used to determine which directory will be examined by the program. On default application current directory.
 
 ---
 
@@ -67,10 +80,13 @@ Patterns for `--exclude` argument passed.
 
 #### **Patterns:**
 
-1. **None**
-2. **C files:** `*.c *.h *.cpp *.hpp`
-3. **Python files:** `*.py`
-4. **Shell files:** `*.sh`
+|Label|Pattern|Description|
+|---|---|---|
+|**None** | *-* | No file will be excluded
+|**C Source Files:**  | `*.c` | Files with extension *.c*
+|**C++ Source Files:**  | `*.cpp` | Files with extension *.cpp*
+|**Python files:** | `*.py` | Files with extension *.py*
+|**Shell scripts:** | `*.sh` | Files with extension *.sh*
 
 ---
 
@@ -89,23 +105,27 @@ Patterns for `--exclude` argument passed.
 
 Block size arguments:
 
-1. `-h` - **Default** : Show in human readable scale
-2. `-b` - **B** : Scale size to specified block size : B - bytes
-3. `-BK` - **KiB** : Scale size to specified block size : K - kilobyes
-4. `-BM` - **MiB** : Scale size to specified block size : M - megabytes
-5. `-BG` - **GiB** : Scale size to specified block size : G - gigabytes
+1. `-h` - **Default** : Show in **human readable** scale
+2. `-b` - **B** : Scale size to specified block size : **B - bytes**
+3. `-BK` - **KiB** : Scale size to specified block size : **K - kilobyes**
+4. `-BM` - **MiB** : Scale size to specified block size : **M - megabytes**
+5. `-BG` - **GiB** : Scale size to specified block size : **G - gigabytes**
 
 ---
 
 ### **Buttons**
 
 1. **Clear** - clear the output area
-2. **Execute** - execute build command
+2. **Execute** - execute build command and print results into output area
 
-### **Scrollable area**
+### **Scrollable window**
 
-Output text area able to be scrolled up and down for maintain commands history and to handle much bigger outputs.
+Output text area able to be scrolled vertically and horizontally for maintain commands history and to handle much bigger outputs.
 
 ---
 
-## xxx
+## **Potential future develop**
+
+1. More command arguments like `-s` (*summarize*), `-d` (*max recursive depth*) ...
+2. Entry to provide custom exclude patterns.
+3. Functionality of storing output into the files.
