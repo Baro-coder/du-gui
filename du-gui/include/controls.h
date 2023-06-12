@@ -3,6 +3,9 @@
 
 /* LIBRARIES */
 #include <gtk/gtk.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
 /* DEFINITIONS */
 
@@ -28,7 +31,7 @@
 
 // Combobox entry
 // -- Exclude files entry name
-#define EXCL_ENTRY_NAME "combobox_pattern_entry"
+#define COMBOBOX_NAME "combobox_patterns"
 
 // Checkboxes names
 // -- Check box name : Include files
@@ -44,26 +47,53 @@
 // -- Check box name : Skip other file systems
 #define CHECKBOX_SOFS_NAME "check_x"
 
-// Radioboxes names
-// -- Radiobox : Default
-#define REDIOBOX_DEF_NAME "radio_default"
-// -- Radiobox : Default
-#define REDIOBOX_BYT_NAME "radio_b"
-// -- Radiobox : Default
-#define REDIOBOX_KIB_NAME "radio_K"
-// -- Radiobox : Default
-#define REDIOBOX_MIB_NAME "radio_M"
-// -- Radiobox : Default
-#define REDIOBOX_GIB_NAME "radio_G"
+// Radiobuttons names
+// -- Radiobutton : Default
+#define RADIOBTN_DEF_NAME "radio_default"
+// -- Radiobutton : Block size B
+#define RADIOBTN_BYT_NAME "radio_b"
+// -- Radiobutton : Block size KiB
+#define RADIOBTN_KIB_NAME "radio_K"
+// -- Radiobutton : Block size MiB
+#define RADIOBTN_MIB_NAME "radio_M"
+// -- Radiobutton : Block size GiB
+#define RADIOBTN_GIB_NAME "radio_G"
+
+// COMMUNICATES
+#define COM_RESULTS "Results:\n"
+#define COM_INVALID_CMD "Invalid command!\n"
+#define COM_SEPARATOR "------------------------------------------------------------\n"
 
 /* DECLARATIONS */
 extern GtkButton *btn_clear;
 extern GtkButton *btn_execute;
 extern GtkTextView *outview;
+extern GtkRadioButton *rad_def;
+extern GtkRadioButton *rad_byt;
+extern GtkRadioButton *rad_kib;
+extern GtkRadioButton *rad_mib;
+extern GtkRadioButton *rad_gib;
+extern GtkComboBox *combo_pattern;
+extern GtkFileChooserButton *dir_chooser_btn;
 
 /* FUNCTIONS */
-void controls_init(GtkBuilder* builder);
+
+// Get controls objects and assign to appropriate references
+void controls_init(GtkBuilder *builder);
+
+// Radiobutton toogle event handler
+void radio_toogle(GtkRadioButton *radiobutton, gpointer user_data);
+
+// Combobox item change event handler
+void on_combobox_changed(GtkComboBox *combobox, gpointer user_data);
+
+// Dir chooser file set event handler
+void on_dir_chooser_btn_file_set(GtkFileChooserButton *chooser, gpointer user_data);
+
+// Button `clear` clicked event handler
 void btn_clear_on_click(GtkButton *button, gpointer user_data);
+
+// Button `execute` clicked event handler
 void btn_execute_on_click(GtkButton *button, gpointer user_data);
 
 #endif

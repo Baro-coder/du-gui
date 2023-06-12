@@ -24,6 +24,13 @@ GtkWidget *create_window(void)
 	// Signals
 	g_signal_connect(btn_clear, "clicked", G_CALLBACK(btn_clear_on_click), outview);
 	g_signal_connect(btn_execute, "clicked", G_CALLBACK(btn_execute_on_click), outview);
+	g_signal_connect(rad_def, "toggled", G_CALLBACK(radio_toogle), NULL);
+	g_signal_connect(rad_byt, "toggled", G_CALLBACK(radio_toogle), NULL);
+	g_signal_connect(rad_kib, "toggled", G_CALLBACK(radio_toogle), NULL);
+	g_signal_connect(rad_mib, "toggled", G_CALLBACK(radio_toogle), NULL);
+	g_signal_connect(rad_gib, "toggled", G_CALLBACK(radio_toogle), NULL);
+	g_signal_connect(combo_pattern, "changed", G_CALLBACK(on_combobox_changed), NULL);
+	g_signal_connect(dir_chooser_btn, "file-set", G_CALLBACK(on_dir_chooser_btn_file_set), NULL);
 
 	// Main window
 	window = GTK_WIDGET(gtk_builder_get_object(builder, MAIN_WINDOW_NAME));
@@ -49,6 +56,7 @@ int main(int argc, char *argv[])
 	gtk_widget_show_all(window);
 
 	// GTK main loop
+	printf(" [*] App main loop is starting...\n");
 	gtk_main();
 
 	return 0;
