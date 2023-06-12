@@ -7,7 +7,7 @@
 ## **Description**
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/Baro-coder/du-gui/master/app/ui/img/logo.png"></img>
+  <img src="https://raw.githubusercontent.com/Baro-coder/du-gui/master/screenshots/screenshot_about_dialog.png"></img>
 </p>
 
 Console built-in program *du* is a UNIX utility to summarize disk usage of the set of files, recursively for directories.
@@ -48,7 +48,7 @@ cd ./du-gui/app/
 Build program:
 
 ``` console
-make clean; make
+make clean && make
 ```
 
 ### **Run**
@@ -61,7 +61,25 @@ Run app with the following command:
 
 ---
 
-## **UI Structure**
+## **User guide**
+
+1. `Choose directory` to examine (**on default**: *program current dir*).
+
+2. ***Optional***: `Choose pattern` of files to be excluded from output results.
+
+3. ***Optional***: `Check options` that are fitted to you.
+
+4. ***Optional***: `Select block size` (**on default**: *human readable* format).
+
+5. `Click button` **Execute**.
+
+---
+
+## **UI Controls Structure**
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/Baro-coder/du-gui/master/screenshots/screenshot_main_window.png"></img>
+</p>
 
 ### **Menu bar**
 
@@ -128,4 +146,8 @@ Output text area able to be scrolled vertically and horizontally for maintain co
 
 ---
 
-## xxx
+## **Potential future development**
+
+1. More program arguments implemented like: `-s` (*summarize*) or `-d` (*max recursive depth*).
+2. Entry to provide custom exclude patterns.
+3. Storing results to output file.
