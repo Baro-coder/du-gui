@@ -27,14 +27,15 @@
 #define BLOCK_SIZE_GIB "-BG"
 
 #define EXCL_PATTERN_NONE ""
-#define EXCL_PATTERN_C "{*.c,*.h,*.cpp,*.hpp}"
+#define EXCL_PATTERN_C "*.c"
+#define EXCL_PATTERN_CPP "*.cpp"
 #define EXCL_PATTERN_PY "*.py"
 #define EXCL_PATTERN_SH "*.sh"
 
 /* FUNCTIONS */
+
+// Execute `du` command with specified `flags`
+//  Returns results stream handler on success or `NULL` on errors
 FILE *execute_cmd(char *flags);
-
-/* DECLARATIONS */
-
 
 #endif

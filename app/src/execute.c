@@ -8,7 +8,7 @@ FILE *execute_cmd(char *flags)
 	sprintf(cmd, "du %s", flags);
 
 	// Execute command and return outstream reference
-	printf(" [*] Core :: Executing command: %s\n", cmd);
+	printf(" [*] Core :: Executing command: `%s`\n", cmd);
 	FILE *stream = popen(cmd, "r");
 
 	if (stream == NULL)

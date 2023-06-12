@@ -14,6 +14,6 @@
 /* FUNCTIONS */
 
 // Create GTK window
-GtkWidget *create_window(void);
+void create_window(void);
 
 #endif

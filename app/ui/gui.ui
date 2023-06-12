@@ -9,16 +9,19 @@
     </columns>
     <data>
       <row>
-        <col id="0" translatable="yes">None</col>
+        <col id="0" translatable="yes" context="No exclusion" comments="No file is excluded">None</col>
       </row>
       <row>
-        <col id="0" translatable="yes" context="C-files" comments="Files with extensions used in C/C++ programs">*.c *.h *.cpp *.hpp</col>
+        <col id="0" translatable="yes" context="C source files" comments="Files with extension `.c`">C Source Files</col>
       </row>
       <row>
-        <col id="0" translatable="yes" context="Python-files" comments="Files with extensions used in Python">*.py</col>
+        <col id="0" translatable="yes" context="C++ source files" comments="Files with extension `.cpp`">C++ Source Files</col>
       </row>
       <row>
-        <col id="0" translatable="yes" context="Shell-scripts" comments="Files with extensions used in shell scripts">*.sh</col>
+        <col id="0" translatable="yes" context="Python scripts files" comments="Files with extension `.py`">Python Files</col>
+      </row>
+      <row>
+        <col id="0" translatable="yes" context="Shell scripts files" comments="Files with extension `.sh`">Shell Scripts</col>
       </row>
     </data>
   </object>
@@ -26,9 +29,10 @@
     <property name="can-focus">False</property>
     <property name="title" translatable="yes">du-gui</property>
     <property name="resizable">False</property>
-    <property name="icon">icon.png</property>
+    <property name="icon">img/logo.png</property>
     <property name="accept-focus">False</property>
     <property name="focus-on-map">False</property>
+    <signal name="destroy" handler="on_main_destroy" swapped="no"/>
     <child>
       <object class="GtkBox" id="_main_container">
         <property name="visible">True</property>
@@ -45,6 +49,7 @@
                 <property name="can-focus">False</property>
                 <property name="label" translatable="yes">_Guide</property>
                 <property name="use-underline">True</property>
+                <signal name="activate" handler="on_menu_item_guide_activate" swapped="no"/>
               </object>
             </child>
             <child>
@@ -165,7 +170,10 @@
                         <child internal-child="entry">
                           <object class="GtkEntry" id="combobox_pattern_entry">
                             <property name="can-focus">False</property>
+                            <property name="editable">False</property>
+                            <property name="max-length">32</property>
                             <property name="max-width-chars">30</property>
+                            <property name="caps-lock-warning">False</property>
                             <property name="progress-pulse-step">0</property>
                             <property name="placeholder-text" translatable="yes">Pattern</property>
                           </object>
@@ -465,6 +473,7 @@
                         <property name="top-margin">10</property>
                         <property name="bottom-margin">10</property>
                         <property name="cursor-visible">False</property>
+                        <property name="accepts-tab">False</property>
                         <property name="input-purpose">terminal</property>
                       </object>
                     </child>
